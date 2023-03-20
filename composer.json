@@ -1,0 +1,11 @@
+{
+    "name": "mrq/party-moneyphp",
+    "autoload": {
+        "psr-4": {
+            "PT\\": "src/"
+        }
+    },
+    "require": {
+        "google/apiclient": "^2.13"
+    }
+}

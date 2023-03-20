@@ -1,0 +1,129 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+}
+.c2 {
+    color: #007bff;
+}
+.red {
+    color: rgb(189, 6, 6);
+}
+.p5 {
+    padding: 2px 5px !important;
+}
+.amoutbox span, .amoutbox1 span{
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    white-space: inherit;
+    font-size: 12px;
+    display: inline-block;
+    user-select: none;
+}
+.amoutbox span:hover, .amoutbox1 span:hover{
+    background-color: #c0e7c9;
+    cursor: pointer;
+}
+.btn-square {
+    height: 60px;
+    padding: 0px 20px;
+}
+
+.btn-square1 {
+    height: 60px;
+    padding: 0px 20px;
+    font-size: 13px;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.inline-block {
+    display: inline-block;
+}
+.tb-scroll {
+    height: calc(100vh - 58px);
+    overflow-y: scroll;
+}
+.txt {
+    padding: 5px;
+    font-size: 18px;
+    color: #a5a5a5;
+}
+.c1 {
+    color: red;
+}
+.w0{
+    width: 0px;
+}
+.btnDelRow:hover,
+.btnDelSheet:hover{
+    cursor: pointer;
+}
+
+.table th,
+.table td {
+    font-size: 14px !important;
+}
+
+.fwb {
+    font-weight: bold;
+}
+.hide {
+    display: none;
+}
+
+.action-top {
+    width: 100%;
+    background: #dbdbdb;
+    padding: 5px;
+} 
+.loading-del{
+    position: absolute;
+    background: #d1e7dd;
+    margin-left: -1px;
+    margin-top: 3px;
+}
+
+.total {
+    font-size: 17px;
+    font-weight: 500;
+}
+.action-box1 {
+    background: #efefef;
+    padding: 5px;
+}
+.action-box2 {
+    background: #f8f8f8;
+    padding: 5px;
+}
+.card-header {
+    padding: 0px;
+}
+.btn.focus, .btn:focus{
+    box-shadow: none;
+}
+.pad5 {
+    padding: 5px;
+}
+.cso {
+    font-size: 12px;
+}
+.cso .out {
+    color: red;
+}
