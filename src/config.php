@@ -2,7 +2,7 @@
 
 $urlsite = "http://localhost/party-moneyphp";
 
-$spreadsheetId = 'xxx';
+$spreadsheetId = '-2ABT-Y8qC_UAwabA';
 
 $amount = [
     100000, 200000, 300000, 400000, 500000, 700000,

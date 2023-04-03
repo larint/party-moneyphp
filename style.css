@@ -71,6 +71,10 @@ input[type=number] {
 .w0{
     width: 0px;
 }
+.w10{
+    width: 45px;
+}
+.btnUpdateName:hover,
 .btnDelRow:hover,
 .btnDelSheet:hover{
     cursor: pointer;
@@ -124,6 +128,11 @@ input[type=number] {
 .cso {
     font-size: 12px;
 }
-.cso .out {
+.cso .out,
+.cso .in {
     color: red;
+}
+.chart {
+    width: 100%;
+    margin-bottom: 10px;
 }

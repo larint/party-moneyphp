@@ -133,6 +133,9 @@ $sheetId = $_GET['sheetId'];
                </div>
             </div>
          </div>
+         <div class="chart">
+            <canvas id="myChart"></canvas>
+         </div>
       </div>
       <div class="col-md-6">
          <div class="d-flex justify-content-between mb-1 action-top">
@@ -159,8 +162,9 @@ $sheetId = $_GET['sheetId'];
         var sheetname = "<?= $sheetName ?>";
         var sheetId = "<?= $sheetId ?>";
         var sheetData = [];
+        var prfixnames = <?= json_encode($prfixnames) ?>;
    </script>
-   <script src="./common.min.js"></script>
+   <script src="./common.js"></script>
    <script src="./list.js"></script>
 </div>
 </body>

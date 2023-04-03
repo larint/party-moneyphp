@@ -88,6 +88,7 @@ if($_POST['r'] == 'getSheets') {
         $maxIndex = 0;
         $total = 0;
         for ($i = 0; $i < $max; $i++) {
+            $name = '';
             $rowData = $sheetDatas[$i];
             if($maxIndex < $rowData[0]) {
                 $maxIndex = (int)$rowData[0];
@@ -107,12 +108,17 @@ if($_POST['r'] == 'getSheets') {
                     $row .= "<td id=\"$rowData[$j]\" data-indexr=\"$idx\">".$rowData[$j]."</td>";
                 } else {
                     $row .= isset($rowData[$j]) ? "<td>".$rowData[$j]."</td>" : "<td></td>";
+                    $name .= $j == 1 ? $rowData[$j] . ': ' : ($j == 2 ? $rowData[$j] : '');
                 }
             }
-            $row .= '<td class="w0">
-                <span class="btnDelRow" data-index="'.($max - $i).'" data-sheetid="'.$sheetId.'">
-                <span class="spinner-border spinner-border-sm hide loading-del" role="status" aria-hidden="true"></span>
-                <i class="bi bi-x-circle c1"></i>
+            $row .= '<td class="w10">
+                <span class="btnUpdateName" data-index="'.($max - $i).'" data-index="'.($max - $i).'" data-name="'.$name.'">
+                    <span class="spinner-border spinner-border-sm hide loading-del" role="status" aria-hidden="true"></span>
+                    <i class="bi bi-pencil-square"></i>
+                </span>
+                <span class="btnDelRow" data-index="'.($max - $i).'" data-index="'.($max - $i).'">
+                    <span class="spinner-border spinner-border-sm hide loading-del" role="status" aria-hidden="true"></span>
+                    <i class="bi bi-x-circle c1"></i>
                 </span>
             </td>';
             $row .= "</tr>";
@@ -203,7 +209,21 @@ if($_POST['r'] == 'getSheets') {
         return true;
     } catch (Exception $e) {}
     return false;
-} else if($_POST['r'] == 'updateSheetRow') {
-
+} else if($_POST['r'] == 'updateName') {
+    try {
+        $indexRow = $_POST['indexRow'];
+        $sheetname = $_POST['sheetname'];
+        $updateRow = [
+            $_POST['pref'], $_POST['name']
+        ];
+        $rows = [$updateRow];
+        $valueRange = new \Google_Service_Sheets_ValueRange();
+        $valueRange->setValues($rows);
+        $range = "$sheetname!B$indexRow:C$indexRow";
+        $options = ['valueInputOption' => 'USER_ENTERED'];
+        $service->spreadsheets_values->update($spreadsheetId, $range, $valueRange, $options);
+        return true;
+    } catch (Exception $e) {}
+    return false;
 }
 

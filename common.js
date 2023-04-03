@@ -126,7 +126,7 @@ function loadSheetList() {
     })
 }
 
-function loadSheetData() {
+function loadSheetData(callback = null) {
     $.ajax({
         type: 'POST',
         url: apisite,
@@ -145,6 +145,13 @@ function loadSheetData() {
             $('#list-detail').html(res.htmlData);
             $('.cso .in').html(sheetData.length - outCus.length);
             $('.cso .out').html(outCus.length);
+            if (callback) {
+                callback(sheetData);
+            }
+            document.dispatchEvent(new CustomEvent('evtLoadSheetData', {
+                detail: {sheetData},
+                cancelable: true,
+            }));
         },
         error: function () {
             toastr.error('Lỗi tải dữ liệu');
@@ -220,4 +227,31 @@ function updateSheetRow(selector, sheetname, indexRow, amount, callback) {
             selector.prop('disabled', false);
         }
     })
+}
+
+function updateName(selector, sheetname, indexRow, pref, name, callback) {
+    $.ajax({
+        type: 'POST',
+        url: apisite,
+        data: { r: 'updateName', sheetname, indexRow, pref, name },
+        beforeSend: function () {
+            selector.find('span').css({ display: 'inline-block'});
+            selector.prop('disabled', true);
+        },
+        success: function (res) {
+            toastr.success('Đã cập nhật!');
+            callback();
+        },
+        error: function (res) {
+            toastr.error('Lỗi cập nhậ!');
+        },
+        complete: function name(params) {
+            selector.find('span').css({ display: 'none'});
+            selector.prop('disabled', false);
+        }
+    })
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
