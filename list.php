@@ -164,8 +164,8 @@ $sheetId = $_GET['sheetId'];
         var sheetData = [];
         var prfixnames = <?= json_encode($prfixnames) ?>;
    </script>
-   <script src="./common.js"></script>
-   <script src="./list.js"></script>
+   <script src="./common.min.js"></script>
+   <script src="./list.min.js"></script>
 </div>
 </body>
 </html>
