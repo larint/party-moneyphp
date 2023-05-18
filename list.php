@@ -146,6 +146,7 @@ $sheetId = $_GET['sheetId'];
                Xoá tất cả
             </button>
          <button class="btn-print btn btn-info btn-sm ml-2">In</button>
+         <button class="btn-save-image btn btn-info btn-sm ml-2">Lưu hình</button>
          </div>
          <div class="tb-scroll">
             <div id="list-detail"></div>
@@ -158,6 +159,7 @@ $sheetId = $_GET['sheetId'];
          </div>
       </div>
    </div>
+   <script src="./html2canvas.min.js"></script>
    <script>
         var sheetname = "<?= $sheetName ?>";
         var sheetId = "<?= $sheetId ?>";

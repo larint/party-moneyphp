@@ -260,4 +260,14 @@ $('.amoutbox1>span').click(function () {
     $('input[name="amount1"]').val(amount);
 });
 
+$('.btn-save-image').click(function(e){
+    html2canvas(document.getElementById("list-detail")).then(function(canvas) {
+    	var a = document.createElement('a');
+		a.href = canvas.toDataURL("image/jpeg");
+		a.download = "danh_sach_khach.jpeg";
+		document.body.appendChild(a);
+		a.click();
+	});
+});
+        
 loadSheetData(loadChart);

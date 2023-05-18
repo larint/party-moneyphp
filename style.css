@@ -96,7 +96,12 @@ input[type=number] {
     width: 100%;
     background: #dbdbdb;
     padding: 5px;
-} 
+    align-items: center;
+}
+
+.action-top button{
+    height: 35px;
+}  
 .loading-del{
     position: absolute;
     background: #d1e7dd;

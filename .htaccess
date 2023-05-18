@@ -1,0 +1,7 @@
+
+#####THE FOLLOWING IS REQUIRED FOR PROTECTED FOLDERS
+AuthUserFile /home/vol1_3/epizy.com/epiz_33545063/dung-tu.loveslife.biz/htdocs/money//.htpasswd.5396ea11eb05c2803c7636a642372c13
+AuthName password_required
+AuthType Basic
+Require valid-user
+########END REQUIRE

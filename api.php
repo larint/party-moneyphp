@@ -214,7 +214,7 @@ if($_POST['r'] == 'getSheets') {
         $indexRow = $_POST['indexRow'];
         $sheetname = $_POST['sheetname'];
         $updateRow = [
-            $_POST['pref'], $_POST['name']
+            $_POST['pref'], ucwords($_POST['name'])
         ];
         $rows = [$updateRow];
         $valueRange = new \Google_Service_Sheets_ValueRange();
